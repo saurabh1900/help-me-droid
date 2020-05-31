@@ -1,0 +1,4 @@
+rootProject.name = 'android-utils'
+include ':app',
+        ':eventcar',
+        ':annotation-compiler'

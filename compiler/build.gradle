@@ -1,0 +1,21 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':eventcar')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.squareup:kotlinpoet:1.5.0'
+
+    kapt commonLibraries.daggerCompiler
+    kapt commonLibraries.daggerAndroidCompiler
+
+    kapt commonLibraries.autoService
+    compileOnly commonLibraries.annotationProcessing
+    compileOnly commonLibraries.autoService
+    compileOnly commonLibraries.formatter
+
+    implementation "me.eugeniomarletti.kotlin.metadata:kotlin-metadata:1.4.0"
+}
